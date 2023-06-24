@@ -46,6 +46,12 @@ pygame.display.set_caption("Smart Horses")
 fuente_puntaje = pygame.font.SysFont("Arial", 24)
 fuente_turno = pygame.font.SysFont("Arial", 32, True)
 
+imagen_caballo_1 = pygame.image.load("horse1.png")
+imagen_caballo_1 = pygame.transform.scale(imagen_caballo_1, (TAMANO_CASILLA, TAMANO_CASILLA))
+
+imagen_caballo_2 = pygame.image.load("horse0.png")
+imagen_caballo_2 = pygame.transform.scale(imagen_caballo_2, (TAMANO_CASILLA, TAMANO_CASILLA))
+
 def generar_tablero_inicial():
     tablero = [[0] * 8 for _ in range(8)]
     
@@ -80,9 +86,9 @@ def dibujar_tablero(tablero, caballo_1, caballo_2, puntaje_jugador_1, puntaje_ju
                 ventana.blit(texto_puntos, (columna * TAMANO_CASILLA + TAMANO_CASILLA // 2 - texto_puntos.get_width() // 2, fila * TAMANO_CASILLA + TAMANO_CASILLA // 2 - texto_puntos.get_height() // 2))
             
     # Dibujar los caballos
-    pygame.draw.circle(ventana, COLOR_CABALLO_1, (caballo_1[1] * TAMANO_CASILLA + TAMANO_CASILLA // 2, caballo_1[0] * TAMANO_CASILLA + TAMANO_CASILLA // 2), TAMANO_CASILLA // 2)
-    pygame.draw.circle(ventana, COLOR_CABALLO_2, (caballo_2[1] * TAMANO_CASILLA + TAMANO_CASILLA // 2, caballo_2[0] * TAMANO_CASILLA + TAMANO_CASILLA // 2), TAMANO_CASILLA // 2)
-    
+    ventana.blit(imagen_caballo_1, (caballo_1[1] * TAMANO_CASILLA, caballo_1[0] * TAMANO_CASILLA))
+    ventana.blit(imagen_caballo_2, (caballo_2[1] * TAMANO_CASILLA, caballo_2[0] * TAMANO_CASILLA))
+
     # Mostrar el puntaje de cada jugador
     texto_puntaje_jugador_1 = fuente_puntaje.render(f"Puntaje Jugador 1: {puntaje_jugador_1}", True, COLOR_TEXTO)
     texto_puntaje_jugador_2 = fuente_puntaje.render(f"Puntaje Jugador 2: {puntaje_jugador_2}", True, COLOR_TEXTO)
