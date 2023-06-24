@@ -78,7 +78,7 @@ def dibujar_tablero(tablero, caballo_1, caballo_2, puntaje_jugador_1, puntaje_ju
             if tablero[fila][columna] > 0:
                 texto_puntos = fuente_puntaje.render(str(tablero[fila][columna]), True, COLOR_PUNTOS)
                 ventana.blit(texto_puntos, (columna * TAMANO_CASILLA + TAMANO_CASILLA // 2 - texto_puntos.get_width() // 2, fila * TAMANO_CASILLA + TAMANO_CASILLA // 2 - texto_puntos.get_height() // 2))
-    
+            
     # Dibujar los caballos
     pygame.draw.circle(ventana, COLOR_CABALLO_1, (caballo_1[1] * TAMANO_CASILLA + TAMANO_CASILLA // 2, caballo_1[0] * TAMANO_CASILLA + TAMANO_CASILLA // 2), TAMANO_CASILLA // 2)
     pygame.draw.circle(ventana, COLOR_CABALLO_2, (caballo_2[1] * TAMANO_CASILLA + TAMANO_CASILLA // 2, caballo_2[0] * TAMANO_CASILLA + TAMANO_CASILLA // 2), TAMANO_CASILLA // 2)
