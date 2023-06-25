@@ -60,12 +60,13 @@ def generar_tablero_inicial():
     caballo_2 = (random.randint(0, 7), random.randint(0, 7))
     
     # Generar casillas con puntos
+    valor =  1
     for _ in range(7):
         fila = random.randint(0, 7)
         columna = random.randint(0, 7)
-        valor = random.randint(1, 7)
         tablero[fila][columna] = valor
-    
+        valor = valor +1
+
     return tablero, caballo_1, caballo_2
 
 def dibujar_tablero(tablero, caballo_1, caballo_2, puntaje_jugador_1, puntaje_jugador_2, turno_jugador_1):
