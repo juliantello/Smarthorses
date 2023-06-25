@@ -29,7 +29,7 @@ def funcion_heuristica_principiante(tablero, puntaje_jugador_1, puntaje_jugador_
 
 # Función heurística para el nivel amateur
 def funcion_heuristica_amateur(tablero, puntaje_jugador_1, puntaje_jugador_2):
-    return puntaje_jugador_1 - puntaje_jugador_2**2
+    return puntaje_jugador_1 - puntaje_jugador_2*2
 
 # Función heurística para el nivel experto
 def funcion_heuristica_experto(tablero, puntaje_jugador_1, puntaje_jugador_2):
