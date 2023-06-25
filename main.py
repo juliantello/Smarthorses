@@ -258,7 +258,7 @@ def jugar_partida(nivel_dificultad):
                 movimientos_posibles = generar_movimientos_posibles(tablero, origen, nivel_dificultad)
                 movimiento = movimientos_posibles[random.randint(0, len(movimientos_posibles) - 1)]
             else:
-                print("Ingrese las coordenadas de destino (fila y columna):")
+                #print("Ingrese las coordenadas de destino (fila y columna):")
                 movimiento = obtener_input()
             
             movimiento_valido = es_movimiento_valido(tablero, origen, movimiento)
